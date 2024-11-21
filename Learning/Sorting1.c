@@ -1,14 +1,7 @@
-// #include "sort.h"
 #include <limits.h>
 #include <stdlib.h>
 
-/**
- * get_max - Find max value in array of integers
- *
- * @array: array to find max value of
- * @size: size of the array
- * Return: 0
- */
+
 int get_max(int *array, size_t size)
 {
 	int max = INT_MIN;
@@ -20,11 +13,6 @@ int get_max(int *array, size_t size)
 	return (max);
 }
 
-/**
- * counting_sort - sort an array
- * @array: array to sort
- * @size: size of array to sort
- */
 void counting_sort(int *array, size_t size)
 {
 	int *temp, *cpy, j, max;
