@@ -5,21 +5,23 @@
 
 int main()
 {
-    
-    system("cls");
-
-    char line1 = '/';
-    char line2 = '/';
-    char line3 = '/';
+    char l1 = '/';
+    char l2 = '-';
+    char l3 = '\\';
 
     int i = 0;
     int speed = 10;
+
+    printf("Speed: ");
     scanf("%d" ,&speed);
+
+    system("cls");
+    printf("\n\n\n");
 
     while(1)
     {
 
-        if(i == 3)
+        if(i == 4)
         {
             i = 0;
         }
@@ -27,25 +29,31 @@ int main()
         switch (i)
         {
             case 0:
-                line1 = '\\';
-                line2 = '/';    
-                line3 = '/';
+                l1 = '|';
+                l2 = '/';
+                l3 = '-';
                 break;
         
             case 1:
-                line1 = '/';
-                line2 = '\\';
-                line3 = '/';     
+                l1 = '/';
+                l2 = '-';
+                l3 = '\\';
                 break;
 
             case 2:
-                line1 = '/';
-                line2 = '/';
-                line3 = '\\';
+                l1 = '-';
+                l2 = '\\';
+                l3 = '|';
+                break;
+
+            case 3:
+                l1 = '\\';
+                l2 = '|';
+                l3 = '/';
                 break;
         }
 
-        printf("\r%c%c%c" ,line1 ,line2, line3);
+        printf("\r                %c%c%c%c%c%c    %c            " ,l1 ,l2 ,l3 ,l1 ,l2 ,l3 ,l1);
         fflush(stdout);
         i++;
         Sleep(speed);
