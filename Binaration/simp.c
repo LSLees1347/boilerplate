@@ -6,6 +6,8 @@
 
 int main()
 {
+    system("cls");
+
     int x = 0;
     int y = 0;
     int ax = 1;
@@ -34,7 +36,6 @@ int main()
             ay = ay * -1;
         }
 
-
         system("cls");
 
         for (int row = -ybound; row <= ybound; row++)
@@ -43,7 +44,7 @@ int main()
             {
                 if (col == x && row == y)
                 {
-                printf("O");
+                    printf("O");
                 }
                 else 
                 {
