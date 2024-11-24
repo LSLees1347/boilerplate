@@ -1,8 +1,16 @@
 #include <stdio.h>
-#include "coinFlip.h"
 #include <Windows.h>
 #include <time.h>
 
+#include "coinFlip.h"
+#include "main.h"
+
+int cfWins = 0;
+
+int getcfWins()
+{
+    return cfWins;
+}
 
 void playCf()
 {
@@ -15,13 +23,16 @@ void playCf()
     printf("1 - Heads\n");
     printf("2 - Tails\n");
     scanf("%d" ,&choice);
+    
     if(choice == anwser)
     {
         printf("\nYou Win!\n");
+        addMoney(25);
+        cfWins++;
     }
     else
     {
-        printf("\nYou Lose, try again.\n");
+        printf("\nYou Lose, try again.\n\n");
     }
     system("pause"); 
 }
@@ -33,7 +44,7 @@ void menuCf()
     do
     {
         system("cls");
-        printf("Coin Flip: \n");
+        printf("Coin Flip: $%d\n" ,getMoney());
         printf("1 - Play\n");
         printf("9 - Exit\n");
         scanf("%d" ,&choice);

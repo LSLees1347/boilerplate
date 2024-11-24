@@ -1,5 +1,5 @@
-#ifndef PLAYERSTATS.H
-#define PLAYERSTATS.H
+#ifndef PLAYERSTATS_H
+#define PLAYERSTATS_H
 
 
 void menuStats();

@@ -5,7 +5,24 @@
 #include "playerStats.h"
 #include "coinFlip.h"
 
+int money = 100;
+int totalEarnings = 0;
 
+void addMoney(int tooAdd)
+{
+    money += tooAdd;
+    totalEarnings += tooAdd;
+}
+
+int getMoney()
+{
+    return money;
+}
+
+int getTotalEarnings()
+{
+    return totalEarnings;
+}
 
 int main()
 {
@@ -14,7 +31,7 @@ int main()
     do
     {
         system("cls");
-        printf("Welcome to the casino!\n\n");
+        printf("Welcome to the casino!  $%d\n\n" ,money);
         printf("0 - Player Stats\n");
         printf("1 - Coin Flip\n");
         printf("9 - Exit\n");
@@ -22,16 +39,11 @@ int main()
 
         switch (choice)
         {
-        case 1:
-            menuCf();
-            break;
-        case 2:
+        case 0:
             menuStats();
             break;
-        default:
-            system("cls");
-            printf("Invalid Choice.");
-            system("pause");
+        case 1:
+            menuCf();
             break;
         }
 

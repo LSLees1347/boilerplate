@@ -3,5 +3,6 @@
 
 
 void menuCf();
+int getcfWins();
 
 #endif
