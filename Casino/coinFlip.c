@@ -18,6 +18,8 @@ void playCf()
     srand(time(0));
     int anwser = rand() % 2 ? 1 : 2;
 
+    int bet = placeBet();
+
     system("cls");
     printf("Heads or Tails?\n");
     printf("1 - Heads\n");
@@ -27,12 +29,14 @@ void playCf()
     if(choice == anwser)
     {
         printf("\nYou Win!\n");
-        addMoney(25);
+        printf("+ $%d\n" ,bet*2);
+        addMoney(bet*2);
         cfWins++;
     }
     else
     {
         printf("\nYou Lose, try again.\n\n");
+        printf("- $%d\n" ,bet);
     }
     system("pause"); 
 }
@@ -46,7 +50,7 @@ void menuCf()
         system("cls");
         printf("Coin Flip: $%d\n" ,getMoney());
         printf("1 - Play\n");
-        printf("9 - Exit\n");
+        printf("9 - Back\n");
         scanf("%d" ,&choice);
         if(choice == 1)
         {

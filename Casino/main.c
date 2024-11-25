@@ -4,6 +4,8 @@
 
 #include "playerStats.h"
 #include "coinFlip.h"
+#include "highLow.h"
+
 
 int money = 100;
 int totalEarnings = 0;
@@ -11,7 +13,10 @@ int totalEarnings = 0;
 void addMoney(int tooAdd)
 {
     money += tooAdd;
-    totalEarnings += tooAdd;
+    if(tooAdd > 0)
+    {
+        totalEarnings += tooAdd;
+    }
 }
 
 int getMoney()
@@ -24,6 +29,17 @@ int getTotalEarnings()
     return totalEarnings;
 }
 
+int placeBet()
+{
+    int bet;
+    printf("\nMoney: $%d\n" ,getMoney());
+    printf("Place your bet: $");
+    scanf("%d" ,&bet);
+
+    money -= bet;
+    return bet;
+}
+
 int main()
 {
     int choice = 0;
@@ -32,8 +48,10 @@ int main()
     {
         system("cls");
         printf("Welcome to the casino!  $%d\n\n" ,money);
-        printf("0 - Player Stats\n");
+        printf("0 - Player Stats\n\n");
         printf("1 - Coin Flip\n");
+        printf("2 - High Low\n");
+        printf("\n");
         printf("9 - Exit\n");
         scanf("%d" ,&choice);
 
@@ -44,6 +62,9 @@ int main()
             break;
         case 1:
             menuCf();
+            break;
+        case 2:
+            menuHl();
             break;
         }
 

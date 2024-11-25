@@ -5,5 +5,6 @@
 void addMoney(int tooAdd);
 int getMoney();
 int getTotalEarnings();
+int placeBet();
 
 #endif

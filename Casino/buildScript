@@ -1,1 +1,1 @@
-gcc main.c playerStats.c coinFlip.c -o Casino
+gcc main.c playerStats.c coinFlip.c highLow.c -o Casino
