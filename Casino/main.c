@@ -5,6 +5,7 @@
 #include "playerStats.h"
 #include "coinFlip.h"
 #include "highLow.h"
+#include "blackJack.h"
 
 
 int money = 100;
@@ -51,6 +52,7 @@ int main()
         printf("0 - Player Stats\n\n");
         printf("1 - Coin Flip\n");
         printf("2 - High Low\n");
+        printf("3 - Blackjack\n");
         printf("\n");
         printf("9 - Exit\n");
         scanf("%d" ,&choice);
@@ -65,6 +67,9 @@ int main()
             break;
         case 2:
             menuHl();
+            break;
+        case 3:
+            menuBj();
             break;
         }
 

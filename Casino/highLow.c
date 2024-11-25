@@ -34,18 +34,19 @@ void playHl()
     if(anwser > base && choice == 1)
     {
         int mtp = 11 - base;
-        addMoney(bet * mtp + bet);
-        hlWins++;
-        printf("You Win!\n");
-        printf("+ $%d\n" ,bet * mtp);
-        
-    }
-    else if(anwser < base && choice == 2)
-    {
         addMoney(bet * base + bet);
         hlWins++;
         printf("You Win!\n");
         printf("+ $%d\n" ,bet * base);
+        
+    }
+    else if(anwser < base && choice == 2)
+    {
+        int mtp = 11 - base;
+        addMoney(bet * mtp + bet);
+        hlWins++;
+        printf("You Win!\n");
+        printf("+ $%d\n" ,bet * mtp);
     }
     else if(anwser == base && choice == 3)
     {
